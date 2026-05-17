@@ -1,13 +1,12 @@
 const axios = require("axios");
 const https = require("https");
 
-const UNIFI_USER     = process.env.UNIFI_USER;
-const UNIFI_PASSWORD = process.env.UNIFI_PASSWORD;
+const UNIFI_API_KEY  = process.env.UNIFI_API_KEY;
 const N8N_WEBHOOK    = process.env.N8N_WEBHOOK_URL;
 const POLL_INTERVAL  = parseInt(process.env.POLL_INTERVAL_MS || "15000");
 
-if (!UNIFI_USER || !UNIFI_PASSWORD || !N8N_WEBHOOK) {
-  console.error("ERROR: Faltan variables de entorno: UNIFI_USER, UNIFI_PASSWORD, N8N_WEBHOOK_URL");
+if (!UNIFI_API_KEY || !N8N_WEBHOOK) {
+  console.error("ERROR: Faltan variables de entorno: UNIFI_API_KEY, N8N_WEBHOOK_URL");
   process.exit(1);
 }
 
